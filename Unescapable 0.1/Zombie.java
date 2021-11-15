@@ -1,19 +1,45 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
+import java.util.*;
+import lang.stride.*;
 
 /**
- * Write a description of class Zombie here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class Zombie extends Actor
 {
+    /**
+     * Zombie constructor
+     */
+    public Zombie() {
+        getImage().scale(55, 65);
+    }
+    
+    private GifImage zombiegif = new GifImage("zombieGif.gif");
+    
     /**
      * Act - do whatever the Zombie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        animate();
+        look();
+        move(1);
+    }
+    
+    /**
+     * To animate the zombies
+     */
+    public void animate() {
+        setImage(zombiegif.getCurrentImage());
+        getImage().scale(55, 65);
+    }
+    
+    /**
+     * To face towards the soldier
+     */
+    public void look() {
+        Actor soldier = (Actor)getWorld().getObjects(Soldier.class).get(0);
+        turnTowards(soldier.getX(), soldier.getY());
     }
 }
