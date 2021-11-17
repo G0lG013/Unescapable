@@ -113,10 +113,19 @@ public class Soldier extends Actor
         }
     }
     
+    /**
+     * A method that returns he current X coordinate position of the survivor.
+     */
+    public int getSoldierXCoordinate()
+    {
+       return this.getX(); 
+    }
     
-    
-  
-
-
-
+    /**
+     * A method that returns he current X coordinate position of the survivor.
+     */
+    public int getSoldierYCoordinate()
+    {
+        return this.getY();
+    }
 }
