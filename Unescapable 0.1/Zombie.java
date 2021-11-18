@@ -25,6 +25,7 @@ public class Zombie extends Actor
         animate();
         look();
         move(1);
+        eatSoldier();
     }
     
     /**
@@ -41,5 +42,15 @@ public class Zombie extends Actor
     public void look() {
         Actor soldier = (Actor)getWorld().getObjects(Soldier.class).get(0);
         turnTowards(soldier.getX(), soldier.getY());
+    }
+    
+    /**
+     * To eat the soldier
+     */
+    public void eatSoldier() {
+        if (isTouching(Soldier.class)) {
+            removeTouching(Soldier.class);
+            Greenfoot.stop();
+        }
     }
 }
