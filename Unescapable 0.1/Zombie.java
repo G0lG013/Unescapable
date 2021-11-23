@@ -7,12 +7,13 @@ import lang.stride.*;
  */
 public class Zombie extends Actor
 {
-    private int zombieHp = 3;
+    private int zombieHp;
     /**
      * Zombie constructor
      */
-    public Zombie() {
+    public Zombie(int zombieHp) {
         getImage().scale(55, 65);
+        this.zombieHp = zombieHp;
     }
     
     private GifImage zombiegif = new GifImage("zombieGif.gif");

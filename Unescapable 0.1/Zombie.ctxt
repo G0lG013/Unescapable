@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Zombie
 comment0.text=\r\n\ \r\n
-comment1.params=
-comment1.target=Zombie()
+comment1.params=zombieHp
+comment1.target=Zombie(int)
 comment1.text=\r\n\ Zombie\ constructor\r\n
 comment2.params=
 comment2.target=void\ act()
