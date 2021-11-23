@@ -7,6 +7,7 @@ import lang.stride.*;
  */
 public class Zombie extends Actor
 {
+    private int zombieHp = 3;
     /**
      * Zombie constructor
      */
@@ -26,6 +27,8 @@ public class Zombie extends Actor
         look();
         move(1);
         eatSoldier();
+        hitZombie();
+        killZombie();
     }
     
     /**
@@ -51,6 +54,19 @@ public class Zombie extends Actor
         if (isTouching(Soldier.class)) {
             removeTouching(Soldier.class);
             Greenfoot.stop();
+        }
+    }
+    
+    public void hitZombie () {
+        if (isTouching(PistolBullet.class)) {
+            getWorld().removeObject(getOneIntersectingObject(PistolBullet.class));
+            zombieHp--;
+        }
+    }
+    
+    public void killZombie() {
+        if (zombieHp == 0){
+            getWorld().removeObject(this);
         }
     }
 }
