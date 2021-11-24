@@ -27,7 +27,7 @@ CONTROLS:
 IMPLEMENTED FEATURES:
 Majed: Main character soldier, Crosshair and pistol bullet
 Jericho:
-Rachelle:
+Rachelle: Map 
 Calysta: 
 
 License: Copyright (c), MIT License [Majed, Jericho, Rachelle and Calysta]
