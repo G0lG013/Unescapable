@@ -44,10 +44,6 @@ public class Soldier extends Actor
         
         //A method that changes the direction of main character depending on the mouse position
         direction();
-       
-        
-       
-
     }
     /**
      * userInput method which sets all the user's control for the soldier object.
