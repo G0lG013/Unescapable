@@ -13,8 +13,17 @@ public class ZombieWorld extends World
     public static Soldier soldier = new Soldier();
     public static MouseInfo mouseCoordinate = Greenfoot.getMouseInfo();
     public static boolean crossHairInWorld;
-    
     public static int whichStage;  
+    
+   
+    //initialize a variable name waveLevel with a data type of integer
+    public static int waveLevel;
+    
+    //initialize a variable name zombieCounter with a data type of integer
+    public static int zombieCounter;
+    
+    public int zombieSpawnDelay;
+    public int zombieSpawnTimer;
     
     /**
      * Constructor for objects of class ZombieWorld.
@@ -24,7 +33,7 @@ public class ZombieWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
-        
+         
         //set this variable to false since crossHair hasn't been added yet at the beginning of the game
         //this variable is used for either adding or removing crosshair inside the world
         crossHairInWorld = false;
@@ -34,13 +43,23 @@ public class ZombieWorld extends World
         
         whichStage = 1;
         
+        //Set the default value of waveLevel to 1.
+        waveLevel = 1;
+        
+        //Set the default value of zombieCounter to 0
+        zombieCounter = 0;
+        
+         zombieSpawnDelay = 50;
+        
     }
     
     public void act(){
        
         //A method that adds the crossHair.
         addCrossHair();
+        zombieSpawnLocation();
         changeStage();
+        zombieSpawnTimer++;
     }
     
     public void addCrossHair(){
@@ -107,6 +126,7 @@ public class ZombieWorld extends World
                     whichStage = 8;
                     soldier.setLocation(500, 50);
                 }
+                 
                 break;
             case 2: 
                 // If soldier is in StageTwo and wants to go to StageThree
@@ -123,6 +143,7 @@ public class ZombieWorld extends World
                     whichStage = 1;
                     soldier.setLocation(500, 50);
                 }
+                
                 break;
             case 3: 
                 // If soldier is in StageThree and wants to go to StageTwo
@@ -132,6 +153,7 @@ public class ZombieWorld extends World
                     whichStage = 2;
                     soldier.setLocation(500, 50);
                 }
+               
                 break;
             case 4:
                 // If soldier is in StageFour and wants to go to StageFive
@@ -148,6 +170,7 @@ public class ZombieWorld extends World
                     whichStage = 1;
                     soldier.setLocation(950, 350);
                 }
+                
                 break;
             case 5:
                 // If soldier is in StageFive and wants to go to StageFour
@@ -157,6 +180,7 @@ public class ZombieWorld extends World
                     whichStage = 4;
                     soldier.setLocation(950, 350);
                 }
+               
                 break;
             case 6:
                 // If soldier is in StageSix and wants to go to StageSeven
@@ -173,6 +197,7 @@ public class ZombieWorld extends World
                     whichStage = 1;
                     soldier.setLocation(50, 350);
                 }
+              
                 break;
             case 7: 
                 // If soldier is in StageSeven and wants to go to StageSix
@@ -182,6 +207,7 @@ public class ZombieWorld extends World
                     whichStage = 6;
                     soldier.setLocation(50, 350);
                 }
+                 
                 break;
             case 8: 
                 // If soldier is in StageEight and wants to go to StageOne
@@ -191,7 +217,123 @@ public class ZombieWorld extends World
                     whichStage = 1;
                     soldier.setLocation(500, 650);
                 }
+               
                 break;
         }
     }
+    /**
+     * A method that spawns zombies on each specific edges of the stage
+     *  All stages has the size of 1000 x 700
+     *  
+     *  top spawn location x = 500, y = 0
+     *  left spawn location x = 0, y = 350
+     *  right spawn location x = 1000, y = 350
+     *  bottom spawn location x = 500, y = 700
+     */
+    public void zombieSpawnLocation()
+    {
+        
+        //an int array variable topSpawnXnY which has elements of {x,y}
+        int []topSpawnXnY = {500, 0};
+        //an int array variable leftSpawnXnY which has elements of {x,y}
+        int []leftSpawnXnY = {0, 350};
+        //an int array variable rightSpawnXnY which has elements of {x,y}
+        int []rightSpawnXnY = {1000,350};
+        //an int array variable bottomSpawnXnY which has elements of {x,y}
+        int [] bottomSpawnXnY = {500, 700};
+        
+        //an int variable that will contain a random int
+        int zombiesRandomSpawn = 0;
+        
+        //an int array variable zombiesAtX and Y which will set all the elements of SpawnXnY.
+        int [] zombiesAtX = {};
+        int [] zombiesAtY = {};
+        
+        //changes the value of zombiesAtX and Y array, and zombiesRandomSpawn depending on which stage
+        //
+        if(whichStage == 1){
+            
+            zombiesRandomSpawn = Greenfoot.getRandomNumber(4);
+            
+            //set the elements value of zombiesAtX and AtY array.
+            zombiesAtX = new int[] {topSpawnXnY[0], leftSpawnXnY[0], rightSpawnXnY[0], bottomSpawnXnY[0]};
+            zombiesAtY = new int[] {topSpawnXnY[1], leftSpawnXnY[1], rightSpawnXnY[1], bottomSpawnXnY[1]};
+        }
+        
+         if(whichStage == 2 || whichStage == 4 || whichStage == 6)
+        {
+            zombiesRandomSpawn = Greenfoot.getRandomNumber(2);     
+            if(whichStage == 2)
+            {
+                zombiesAtX = new int[] {bottomSpawnXnY[0],topSpawnXnY[0]};
+                zombiesAtY = new int[] {bottomSpawnXnY[1], topSpawnXnY[1]};  
+            }
+            
+            if(whichStage == 4 || whichStage == 6){
+                 zombiesAtX = new int[] {leftSpawnXnY[0],rightSpawnXnY[0]};
+                zombiesAtY = new int[] {leftSpawnXnY[1], rightSpawnXnY[1]};  
+            }
+            
+        }
+        
+        else if(whichStage == 3 || whichStage == 5 || whichStage == 7 || whichStage == 8)
+        {
+            zombiesRandomSpawn = 0;
+            if(whichStage == 3)
+            {
+                 zombiesAtX = new int[] {bottomSpawnXnY[0]};
+                zombiesAtY = new int[] {bottomSpawnXnY[1]};  
+            }
+            
+            
+            if(whichStage == 5)
+            {
+                 zombiesAtX = new int[] {leftSpawnXnY[0]};
+                zombiesAtY = new int[] {leftSpawnXnY[1]};  
+            }
+            
+             if(whichStage == 7)
+            {
+                 zombiesAtX = new int[] {rightSpawnXnY[0]};
+                zombiesAtY = new int[] {rightSpawnXnY[1]};  
+            }
+            
+             if(whichStage == 8)
+            {
+                 zombiesAtX = new int[] {topSpawnXnY[0]};
+                zombiesAtY = new int[] {topSpawnXnY[1]};  
+            }
+            
+
+            
+        }
+        while(zombieCounter < 10 && zombieSpawnTimer >= zombieSpawnDelay)
+        {
+            
+            
+            
+            addObject(new Zombie(1), zombiesAtX[zombiesRandomSpawn], zombiesAtY[zombiesRandomSpawn]);
+            zombieCounter++;
+            zombieSpawnTimer = 0;
+        
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+  //  public boolean noMoreZombies(){
+     //   boolean result = false;
+    //    if()    
+  //      return result;
+  //  }
+    
+    public void increaseWave(){
+        
+    }
+    
+    
 }

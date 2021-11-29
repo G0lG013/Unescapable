@@ -8,6 +8,10 @@ import lang.stride.*;
 public class Zombie extends Actor
 {
     private int zombieHp;
+    
+    
+    //NumberOfDeadZombie
+    private int numDeadZombies = 0;
     /**
      * Zombie constructor
      */
@@ -68,6 +72,13 @@ public class Zombie extends Actor
     public void killZombie() {
         if (zombieHp == 0){
             getWorld().removeObject(this);
+            numDeadZombies++;// if zombie dies then increment the number of dead zombies
         }
     }
+    
+    public int getNumDeadZombies(){
+        return numDeadZombies; 
+    }
+    
+    
 }

@@ -25,10 +25,10 @@ CONTROLS:
 5) Press space to shoot with a pistol.
 
 IMPLEMENTED FEATURES:
-Majed: Main character soldier, Crosshair and pistol bullet
-Jericho:
-Rachelle: Map 
-Calysta: 
+Majed: Main character soldier, Crosshair, pistol bullet, spawn Zombie locations
+Jericho: Zombies
+Rachelle: Map, Fences 
+Calysta: Menu 
 
 License: Copyright (c), MIT License [Majed, Jericho, Rachelle and Calysta]
 

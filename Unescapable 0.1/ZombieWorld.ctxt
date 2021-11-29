@@ -11,4 +11,9 @@ comment3.target=void\ addCrossHair()
 comment4.params=
 comment4.target=void\ changeStage()
 comment4.text=\r\n\ Which\ stages\ depending\ in\ which\ stage\ you\ are\ in.\r\n
-numComments=5
+comment5.params=
+comment5.target=void\ zombieSpawnLocation()
+comment5.text=\r\n\ A\ method\ that\ spawns\ zombies\ on\ each\ specific\ edges\ of\ the\ stage\r\n\ \ All\ stages\ has\ the\ size\ of\ 1000\ x\ 700\r\n\ \ \r\n\ \ top\ spawn\ location\ x\ \=\ 500,\ y\ \=\ 0\r\n\ \ left\ spawn\ location\ x\ \=\ 0,\ y\ \=\ 350\r\n\ \ right\ spawn\ location\ x\ \=\ 1000,\ y\ \=\ 350\r\n\ \ bottom\ spawn\ location\ x\ \=\ 500,\ y\ \=\ 700\r\n
+comment6.params=
+comment6.target=void\ increaseWave()
+numComments=7
