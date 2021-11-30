@@ -99,28 +99,36 @@ public class ZombieWorld extends World
         switch (whichStage) {
             case 1: 
                 // If soldier is in StageOne and wants to go to StageTwo
-                if (soldier.getSoldierYCoordinate() <= 5) {
+                if (soldier.getSoldierYCoordinate() <= 5 && 
+                    soldier.getSoldierXCoordinate() > 400 && 
+                    soldier.getSoldierXCoordinate() < 600) {
                     StageTwo stageTwo = new StageTwo();
                     Greenfoot.setWorld(stageTwo);
                     whichStage = 2;
                     soldier.setLocation(500, 650);
                 }
                 // If soldier is in StageOne and wants to go to StageFour
-                if (soldier.getSoldierXCoordinate() >= 995) {
+                if (soldier.getSoldierXCoordinate() >= 995 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageFour stageFour = new StageFour();
                     Greenfoot.setWorld(stageFour);
                     whichStage = 4;
                     soldier.setLocation(50, 350);
                 }
                 // If soldier is in StageOne and wants to go to StageSix
-                if (soldier.getSoldierXCoordinate() <= 5) {
+                if (soldier.getSoldierXCoordinate() <= 5 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageSix stageSix = new StageSix();
                     Greenfoot.setWorld(stageSix);
                     whichStage = 6;
                     soldier.setLocation(950, 350);
                 }
                 // If soldier is in StageOne and wants to go to StageEight
-                if (soldier.getSoldierYCoordinate() >= 695) {
+                if (soldier.getSoldierYCoordinate() >= 695 && 
+                    soldier.getSoldierXCoordinate() > 400 && 
+                    soldier.getSoldierXCoordinate() < 600) {
                     StageEight stageEight = new StageEight();
                     Greenfoot.setWorld(stageEight);
                     whichStage = 8;
@@ -130,14 +138,18 @@ public class ZombieWorld extends World
                 break;
             case 2: 
                 // If soldier is in StageTwo and wants to go to StageThree
-                if (soldier.getSoldierYCoordinate() <= 5) {
+                if (soldier.getSoldierYCoordinate() <= 5 && 
+                    soldier.getSoldierXCoordinate() > 400 && 
+                    soldier.getSoldierXCoordinate() < 600) {
                     StageThree stageThree = new StageThree();
                     Greenfoot.setWorld(stageThree);
                     whichStage = 3;
                     soldier.setLocation(500, 650);
                 }
                 // If soldier is in StageTwo and wants to go to StageOne
-                if (soldier.getSoldierYCoordinate() >= 695) {
+                if (soldier.getSoldierYCoordinate() >= 695 && 
+                    soldier.getSoldierXCoordinate() > 400 && 
+                    soldier.getSoldierXCoordinate() < 600) {
                     StageOne stageOne = new StageOne();
                     Greenfoot.setWorld(stageOne);
                     whichStage = 1;
@@ -147,7 +159,9 @@ public class ZombieWorld extends World
                 break;
             case 3: 
                 // If soldier is in StageThree and wants to go to StageTwo
-                if (soldier.getSoldierYCoordinate() >= 695) {
+                if (soldier.getSoldierYCoordinate() >= 695 && 
+                    soldier.getSoldierXCoordinate() > 400 && 
+                    soldier.getSoldierXCoordinate() < 600) {
                     StageTwo stageTwo = new StageTwo();
                     Greenfoot.setWorld(stageTwo);
                     whichStage = 2;
@@ -157,14 +171,18 @@ public class ZombieWorld extends World
                 break;
             case 4:
                 // If soldier is in StageFour and wants to go to StageFive
-                if (soldier.getSoldierXCoordinate() >= 995) {
+                if (soldier.getSoldierXCoordinate() >= 995 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageFive stageFive = new StageFive();
                     Greenfoot.setWorld(stageFive);
                     whichStage = 5;
                     soldier.setLocation(50, 350);
                 }
                 // If soldier is in StageFour and wants to go to StageOne
-                if (soldier.getSoldierXCoordinate() <= 5) {
+                if (soldier.getSoldierXCoordinate() <= 5 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageOne stageOne = new StageOne();
                     Greenfoot.setWorld(stageOne);
                     whichStage = 1;
@@ -174,7 +192,9 @@ public class ZombieWorld extends World
                 break;
             case 5:
                 // If soldier is in StageFive and wants to go to StageFour
-                if (soldier.getSoldierXCoordinate() <= 5) {
+                if (soldier.getSoldierXCoordinate() <= 5 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageFour stageFour = new StageFour();
                     Greenfoot.setWorld(stageFour);
                     whichStage = 4;
@@ -184,14 +204,18 @@ public class ZombieWorld extends World
                 break;
             case 6:
                 // If soldier is in StageSix and wants to go to StageSeven
-                if (soldier.getSoldierXCoordinate() <= 5) {
+                if (soldier.getSoldierXCoordinate() <= 5 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageSeven stageSeven = new StageSeven();
                     Greenfoot.setWorld(stageSeven);
                     whichStage = 7;
                     soldier.setLocation(950, 350);
                 }
                 // If soldier is in StageSix and wants to go to StageOne
-                if (soldier.getSoldierXCoordinate() >= 995) {
+                if (soldier.getSoldierXCoordinate() >= 995 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageOne stageOne = new StageOne();
                     Greenfoot.setWorld(stageOne);
                     whichStage = 1;
@@ -201,7 +225,9 @@ public class ZombieWorld extends World
                 break;
             case 7: 
                 // If soldier is in StageSeven and wants to go to StageSix
-                if (soldier.getSoldierXCoordinate() >= 995) {
+                if (soldier.getSoldierXCoordinate() >= 995 && 
+                    soldier.getSoldierYCoordinate() > 220 && 
+                    soldier.getSoldierYCoordinate() < 480) {
                     StageSix stageSix = new StageSix();
                     Greenfoot.setWorld(stageSix);
                     whichStage = 6;
@@ -211,13 +237,14 @@ public class ZombieWorld extends World
                 break;
             case 8: 
                 // If soldier is in StageEight and wants to go to StageOne
-                if (soldier.getSoldierYCoordinate() <= 5) {
+                if (soldier.getSoldierYCoordinate() <= 5 && 
+                    soldier.getSoldierXCoordinate() > 400 && 
+                    soldier.getSoldierXCoordinate() < 600) {
                     StageOne stageOne = new StageOne();
                     Greenfoot.setWorld(stageOne);
                     whichStage = 1;
                     soldier.setLocation(500, 650);
                 }
-               
                 break;
         }
     }
@@ -285,7 +312,6 @@ public class ZombieWorld extends World
                 zombiesAtY = new int[] {bottomSpawnXnY[1]};  
             }
             
-            
             if(whichStage == 5)
             {
                  zombiesAtX = new int[] {leftSpawnXnY[0]};
@@ -303,9 +329,6 @@ public class ZombieWorld extends World
                  zombiesAtX = new int[] {topSpawnXnY[0]};
                 zombiesAtY = new int[] {topSpawnXnY[1]};  
             }
-            
-
-            
         }
         while(zombieCounter < 10 && zombieSpawnTimer >= zombieSpawnDelay)
         {
