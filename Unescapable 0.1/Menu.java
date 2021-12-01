@@ -20,7 +20,8 @@ public class Menu extends World
         prepare();
     }
 
-    public void act() {
+    public void act() 
+    {
         
     }
 

@@ -25,7 +25,7 @@ public class Exit extends Button
         checkMouse();
         
         if(Greenfoot.mouseClicked(this)) {
-        Greenfoot.stop();
+            Greenfoot.stop();
         }
     }
 }

@@ -60,5 +60,4 @@ public class StageOne extends ZombieWorld
             addObject(verticalFence, 990, 540 + (i * 95));
         }
     }
-    
 }

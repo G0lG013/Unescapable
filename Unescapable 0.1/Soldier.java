@@ -19,13 +19,13 @@ public class Soldier extends Actor
      * Constructor
      */
     public Soldier()
-    {  //Set the value to 20 inside the constructor. if we change this value less than 20 then, the fire rate of the pistol will increased.  
+    {  
+        //Set the value to 20 inside the constructor. if we change this value less than 20 then, the fire rate of the pistol will increased.  
        pistolReloadTime = 20;
        //initialize the value to 0 inside the contructor
-       delayPistolCount=0;
+       delayPistolCount = 0;
         
     }
-    
     
     /**
      * Act - do whatever the Soldier wants to do. This method is called whenever
@@ -34,7 +34,7 @@ public class Soldier extends Actor
     public void act()
     {
         // Add your action code here.
-         //Increment delayPistolCount so that it will reach the value of the pistolReloadTime.
+        //Increment delayPistolCount so that it will reach the value of the pistolReloadTime.
         delayPistolCount++;
         
         //Sets the image of the soldier based on gifImage object
@@ -45,12 +45,18 @@ public class Soldier extends Actor
         //A method that changes the direction of main character depending on the mouse position
         direction();
     }
+    
     /**
      * userInput method which sets all the user's control for the soldier object.
      * 
      */
     public void userInput()
-    {   //If w is pressed on the keyboard
+    {   
+        // record current position
+        int curX = getX();
+        int curY = getY();
+        
+        //If w is pressed on the keyboard
         if(Greenfoot.isKeyDown("w"))
         {   //Soldier will move forward
             move(2);
@@ -59,15 +65,20 @@ public class Soldier extends Actor
             if(Greenfoot.isKeyDown("shift")){
                 move(3);
             }
-            
-           
         }
         
         //if s is pressed on the keyboard
          if(Greenfoot.isKeyDown("s"))
         {   //Soldier will move backward
             move(-2);
+        }
         
+        // Now that we moved, are we inside a fence (touching)?
+        // IF yes, then "cancel" the move
+        if (isTouching(HorizontalFence.class) || isTouching(VerticalFence.class)) 
+        {
+            setLocation(curX, curY);
+
         }
         
         //Calls a method shootPistol() when the user pressed space in the keyboard
@@ -76,8 +87,8 @@ public class Soldier extends Actor
             shootPistol();
         
         }
-
     }
+    
     /**
      * A method that enables to change the main character's direction based on the cursor's position.
      */
@@ -86,10 +97,9 @@ public class Soldier extends Actor
         MouseInfo mouseDirection = Greenfoot.getMouseInfo();
         if(mouseDirection != null){
             turnTowards(mouseDirection.getX(), mouseDirection.getY());
-            
         }
-        
     }
+    
     /**
      * A method that enables the main character to shoot pistol
      */
@@ -105,7 +115,6 @@ public class Soldier extends Actor
             pb.setRotation(this.getRotation());
            //reset the delayCount so that it will reincrease from act method and reavalute from if statement above. 
            delayPistolCount = 0;
-       
         }
     }
     

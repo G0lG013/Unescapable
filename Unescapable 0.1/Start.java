@@ -26,7 +26,7 @@ public class Start extends Button
         checkMouse();
         
         if(Greenfoot.mouseClicked(this)) {
-        Greenfoot.setWorld(new Intro());
+            Greenfoot.setWorld(new Intro());
         }
     }
 }
