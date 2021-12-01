@@ -15,5 +15,9 @@ public class StageSeven extends ZombieWorld
      */
     public StageSeven()
     {
+        populate();
+    }
+    public void populate() {
+        addObject(new TankZombie(20), 200, 350);
     }
 }

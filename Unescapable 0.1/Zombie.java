@@ -12,6 +12,10 @@ public class Zombie extends Actor
     
     //NumberOfDeadZombie
     private int numDeadZombies = 0;
+    
+    public Zombie() {
+        
+    }
     /**
      * Zombie constructor
      */
