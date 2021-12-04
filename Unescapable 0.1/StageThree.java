@@ -18,6 +18,6 @@ public class StageThree extends ZombieWorld
         populate();
     }
     public void populate() {
-       // addObject(new FastZombie(10), 500, 200);
+       addObject(new FastZombie(10), 500, 200);
     }
 }
