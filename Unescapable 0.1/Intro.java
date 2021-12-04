@@ -43,11 +43,11 @@ public class Intro extends World
      */
     public void nextText() 
     {
-        if (curDialogue < dialogue.length 
+       if (curDialogue < dialogue.length && countToCooldown >= cooldownDialogue
         && (Greenfoot.isKeyDown("enter") || Greenfoot.mouseClicked(this))) {
             showText(dialogue[curDialogue], 10, 10 + (50 * curDialogue));
             curDialogue++;
-            cooldownDialogue = 0;
+            countToCooldown = 0;
         }
     }
     
