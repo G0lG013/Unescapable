@@ -21,7 +21,6 @@ public class FastZombie extends Zombie
     {
         look();
         move(2);
-        eatSoldier();
         hitFastZombie();
         killFastZombie();
     }

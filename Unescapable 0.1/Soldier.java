@@ -14,6 +14,10 @@ public class Soldier extends Actor
     private int pistolReloadTime;
     private int delayPistolCount;
     private int runningLimit;
+    private static int hpCount;
+    private int hitCd;
+    private int hitCdTimer;
+    Bandage bandage = new Bandage();
     
     /**
      * Constructor
@@ -24,7 +28,8 @@ public class Soldier extends Actor
        pistolReloadTime = 20;
        //initialize the value to 0 inside the contructor
        delayPistolCount = 0;
-        
+       hitCd = 50; 
+       hitCdTimer = 0;
     }
     
     /**
@@ -44,6 +49,11 @@ public class Soldier extends Actor
         
         //A method that changes the direction of main character depending on the mouse position
         direction();
+        
+        increaseHp();
+        
+        die();
+        hitCdTimer++;
     }
     
     /**
@@ -100,6 +110,24 @@ public class Soldier extends Actor
         }
     }
     
+    public void die() {
+        if (isTouching(Zombie.class) && hitCdTimer >= hitCd) {
+            hpCount--;
+            hitCdTimer = 0;
+            if (hpCount == 0) {
+                Greenfoot.stop();
+            }
+        }
+    }
+    
+    public void increaseHp() {
+        if (isTouching(Bandage.class)) {
+            if (hpCount < 3) {
+                hpCount++;
+            }
+        }
+    }
+    
     /**
      * A method that enables the main character to shoot pistol
      */
@@ -118,6 +146,7 @@ public class Soldier extends Actor
         }
     }
     
+
     /**
      * A method that returns he current X coordinate position of the survivor.
      */
@@ -133,4 +162,13 @@ public class Soldier extends Actor
     {
         return this.getY();
     }
+    
+    public void setHpCount(int hp) {
+        this.hpCount = hp;
+    }
+    
+    public int getHpCount() {
+        return this.hpCount;
+    }
+    
 }

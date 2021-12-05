@@ -21,7 +21,6 @@ public class TankZombie extends Zombie
     {
         look();
         move(1);
-        eatSoldier();
         hitTankZombie();
         killTankZombie();
     }

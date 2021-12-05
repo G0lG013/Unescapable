@@ -8,13 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bandage extends Actor
 {
+    
+    public Bandage() {
+    }
+    
     /**
      * Act - do whatever the Bandage wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        pickUpBandage();    
     }
     
     public void pickUpBandage() {
@@ -22,4 +26,6 @@ public class Bandage extends Actor
             getWorld().removeObject(this);
         }
     }
+    
+    
 }

@@ -35,7 +35,6 @@ public class Zombie extends Actor
         animate();
         look();
         move(1);
-        eatSoldier();
         hitZombie();
         killZombie();
     }
@@ -56,16 +55,6 @@ public class Zombie extends Actor
         turnTowards(soldier.getX(), soldier.getY());
     }
     
-    /**
-     * To eat the soldier
-     */
-    public void eatSoldier() {
-        if (isTouching(Soldier.class)) {
-            removeTouching(Soldier.class);
-            Greenfoot.stop();
-        }
-    }
-    
     public void hitZombie () {
         if (isTouching(PistolBullet.class)) {
             getWorld().removeObject(getOneIntersectingObject(PistolBullet.class));
@@ -75,6 +64,9 @@ public class Zombie extends Actor
     
     public void killZombie() {
         if (zombieHp == 0){
+            if (Greenfoot.getRandomNumber(100) < 10) {
+                getWorld().addObject(new Bandage(), getX(), getY());
+            }
             getWorld().removeObject(this);
             numDeadZombies++;// if zombie dies then increment the number of dead zombies
         }

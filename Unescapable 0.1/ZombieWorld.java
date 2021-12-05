@@ -49,7 +49,7 @@ public class ZombieWorld extends World
         //Set the default value of zombieCounter to 0
         zombieCounter = 0;
         
-         zombieSpawnDelay = 50;
+        zombieSpawnDelay = 50;
         
     }
     
