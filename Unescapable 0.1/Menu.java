@@ -32,10 +32,13 @@ public class Menu extends World
     private void prepare()
     {
         Start start = new Start();
-        addObject(start,500,390);
-        start.setLocation(500,480);
+        addObject(start,500,480);
+        //start.setLocation(500,480);
         Exit exit = new Exit();
-        addObject(exit,500,470);
-        exit.setLocation(500,570);
+        addObject(exit,500,570);
+        //exit.setLocation(500,570);
+        Credits credits = new Credits();
+        addObject(credits, 900, 650);
+        //credits.setLocation(900, 600);
     }
 }

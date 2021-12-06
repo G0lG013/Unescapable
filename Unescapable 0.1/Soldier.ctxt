@@ -29,5 +29,5 @@ comment8.target=int\ getSoldierXCoordinate()
 comment8.text=\r\n\ A\ method\ that\ returns\ he\ current\ X\ coordinate\ position\ of\ the\ survivor.\r\n
 comment9.params=
 comment9.target=int\ getSoldierYCoordinate()
-comment9.text=\r\n\ A\ method\ that\ returns\ he\ current\ X\ coordinate\ position\ of\ the\ survivor.\r\n
+comment9.text=\r\n\ A\ method\ that\ returns\ the\ current\ X\ coordinate\ position\ of\ the\ survivor.\r\n
 numComments=12

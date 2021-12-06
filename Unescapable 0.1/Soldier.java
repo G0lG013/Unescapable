@@ -14,7 +14,7 @@ public class Soldier extends Actor
     private int pistolReloadTime;
     private int delayPistolCount;
     private int runningLimit;
-    private static int hpCount;
+    public static int hpCount;
     private int hitCd;
     private int hitCdTimer;
     Bandage bandage = new Bandage();
@@ -146,7 +146,6 @@ public class Soldier extends Actor
         }
     }
     
-
     /**
      * A method that returns he current X coordinate position of the survivor.
      */
@@ -156,7 +155,7 @@ public class Soldier extends Actor
     }
     
     /**
-     * A method that returns he current X coordinate position of the survivor.
+     * A method that returns the current X coordinate position of the survivor.
      */
     public int getSoldierYCoordinate()
     {

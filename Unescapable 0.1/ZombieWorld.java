@@ -24,7 +24,7 @@ public class ZombieWorld extends World
     
     public int zombieSpawnDelay;
     public int zombieSpawnTimer;
-    
+ 
     /**
      * Constructor for objects of class ZombieWorld.
      * 
@@ -248,6 +248,7 @@ public class ZombieWorld extends World
                 break;
         }
     }
+    
     /**
      * A method that spawns zombies on each specific edges of the stage
      *  All stages has the size of 1000 x 700
@@ -340,12 +341,7 @@ public class ZombieWorld extends World
             zombieSpawnTimer = 0;
         
         }
-        
-        
-        
-        
-        
-        
+    
     }
     
   //  public boolean noMoreZombies(){

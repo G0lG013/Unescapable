@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bandage extends Actor
 {
-    
     public Bandage() {
     }
     
@@ -18,7 +17,7 @@ public class Bandage extends Actor
      */
     public void act()
     {
-        pickUpBandage();    
+        pickUpBandage();
     }
     
     public void pickUpBandage() {
@@ -26,6 +25,4 @@ public class Bandage extends Actor
             getWorld().removeObject(this);
         }
     }
-    
-    
 }
