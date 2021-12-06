@@ -14,7 +14,8 @@ public class Soldier extends Actor
     private int pistolReloadTime;
     private int delayPistolCount;
     private int runningLimit;
-    public static int hpCount;
+    // public static int hpCount;
+    private int hpCount;
     private int hitCd;
     private int hitCdTimer;
     Bandage bandage = new Bandage();
@@ -30,6 +31,7 @@ public class Soldier extends Actor
        delayPistolCount = 0;
        hitCd = 50; 
        hitCdTimer = 0;
+       hpCount = 3;
     }
     
     /**
@@ -114,7 +116,7 @@ public class Soldier extends Actor
         if (isTouching(Zombie.class) && hitCdTimer >= hitCd) {
             hpCount--;
             hitCdTimer = 0;
-            if (hpCount == 0) {
+            if (hpCount <= 0) {
                 Greenfoot.stop();
             }
         }

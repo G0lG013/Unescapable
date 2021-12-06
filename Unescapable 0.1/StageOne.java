@@ -9,12 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StageOne extends ZombieWorld
 {
 
+    public StageOne() {
+        addFence();
+    }
     /**
      * Constructor for objects of class StageOne.
      * 
      */
-    public StageOne()
+    public StageOne(int x, int y)
     {
+        soldier.setLocation(x, y);
        addFence();
     }
     /**

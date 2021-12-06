@@ -10,7 +10,7 @@ public class ZombieWorld extends World
 {
     //static instance Objects & variable with boolean data type.
     public static Crosshair crossHair = new Crosshair();
-    public static Soldier soldier = new Soldier();
+    public Soldier soldier;
     public static MouseInfo mouseCoordinate = Greenfoot.getMouseInfo();
     public static boolean crossHairInWorld;
     public static int whichStage;  
@@ -33,12 +33,13 @@ public class ZombieWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
-         
+        
         //set this variable to false since crossHair hasn't been added yet at the beginning of the game
         //this variable is used for either adding or removing crosshair inside the world
         crossHairInWorld = false;
         
         //adds the object in the middle of World.
+        soldier = new Soldier();
         addObject(soldier, 300, 200);
         
         whichStage = 1;
@@ -102,37 +103,33 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierYCoordinate() <= 5 && 
                     soldier.getSoldierXCoordinate() > 400 && 
                     soldier.getSoldierXCoordinate() < 600) {
-                    StageTwo stageTwo = new StageTwo();
-                    Greenfoot.setWorld(stageTwo);
+                    Greenfoot.setWorld(new StageTwo(500, 650));
                     whichStage = 2;
-                    soldier.setLocation(500, 650);
+                    //soldier.setLocation(500, 650);
                 }
                 // If soldier is in StageOne and wants to go to StageFour
                 if (soldier.getSoldierXCoordinate() >= 995 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageFour stageFour = new StageFour();
-                    Greenfoot.setWorld(stageFour);
+                    Greenfoot.setWorld(new StageFour(50, 350));
                     whichStage = 4;
-                    soldier.setLocation(50, 350);
+                    //soldier.setLocation(50, 350);
                 }
                 // If soldier is in StageOne and wants to go to StageSix
                 if (soldier.getSoldierXCoordinate() <= 5 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageSix stageSix = new StageSix();
-                    Greenfoot.setWorld(stageSix);
+                    Greenfoot.setWorld(new StageSix(950, soldier.getY()));
                     whichStage = 6;
-                    soldier.setLocation(950, 350);
+                    //soldier.setLocation(950, soldier.getY());
                 }
                 // If soldier is in StageOne and wants to go to StageEight
                 if (soldier.getSoldierYCoordinate() >= 695 && 
                     soldier.getSoldierXCoordinate() > 400 && 
                     soldier.getSoldierXCoordinate() < 600) {
-                    StageEight stageEight = new StageEight();
-                    Greenfoot.setWorld(stageEight);
+                    Greenfoot.setWorld(new StageEight(500, 50));
                     whichStage = 8;
-                    soldier.setLocation(500, 50);
+                    //soldier.setLocation(500, 50);
                 }
                  
                 break;
@@ -141,19 +138,17 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierYCoordinate() <= 5 && 
                     soldier.getSoldierXCoordinate() > 400 && 
                     soldier.getSoldierXCoordinate() < 600) {
-                    StageThree stageThree = new StageThree();
-                    Greenfoot.setWorld(stageThree);
+                    Greenfoot.setWorld(new StageThree(500, 650));
                     whichStage = 3;
-                    soldier.setLocation(500, 650);
+                    //soldier.setLocation(500, 650);
                 }
                 // If soldier is in StageTwo and wants to go to StageOne
                 if (soldier.getSoldierYCoordinate() >= 695 && 
                     soldier.getSoldierXCoordinate() > 400 && 
                     soldier.getSoldierXCoordinate() < 600) {
-                    StageOne stageOne = new StageOne();
-                    Greenfoot.setWorld(stageOne);
+                    Greenfoot.setWorld(new StageOne(500, 50));
                     whichStage = 1;
-                    soldier.setLocation(500, 50);
+                    //soldier.setLocation(500, 50);
                 }
                 
                 break;
@@ -162,10 +157,9 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierYCoordinate() >= 695 && 
                     soldier.getSoldierXCoordinate() > 400 && 
                     soldier.getSoldierXCoordinate() < 600) {
-                    StageTwo stageTwo = new StageTwo();
-                    Greenfoot.setWorld(stageTwo);
+                    Greenfoot.setWorld(new StageTwo(500, 50));
                     whichStage = 2;
-                    soldier.setLocation(500, 50);
+                    //soldier.setLocation(500, 50);
                 }
                
                 break;
@@ -174,19 +168,17 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierXCoordinate() >= 995 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageFive stageFive = new StageFive();
-                    Greenfoot.setWorld(stageFive);
+                    Greenfoot.setWorld(new StageFive(50, 350));
                     whichStage = 5;
-                    soldier.setLocation(50, 350);
+                    //soldier.setLocation(50, 350);
                 }
                 // If soldier is in StageFour and wants to go to StageOne
                 if (soldier.getSoldierXCoordinate() <= 5 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageOne stageOne = new StageOne();
-                    Greenfoot.setWorld(stageOne);
+                    Greenfoot.setWorld(new StageOne(950, 350));
                     whichStage = 1;
-                    soldier.setLocation(950, 350);
+                    //soldier.setLocation(950, 350);
                 }
                 
                 break;
@@ -195,10 +187,9 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierXCoordinate() <= 5 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageFour stageFour = new StageFour();
-                    Greenfoot.setWorld(stageFour);
+                    Greenfoot.setWorld(new StageFour(950, 350));
                     whichStage = 4;
-                    soldier.setLocation(950, 350);
+                    //soldier.setLocation(950, 350);
                 }
                
                 break;
@@ -207,19 +198,17 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierXCoordinate() <= 5 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageSeven stageSeven = new StageSeven();
-                    Greenfoot.setWorld(stageSeven);
+                    Greenfoot.setWorld(new StageSeven(950, 350));
                     whichStage = 7;
-                    soldier.setLocation(950, 350);
+                    //soldier.setLocation(950, 350);
                 }
                 // If soldier is in StageSix and wants to go to StageOne
                 if (soldier.getSoldierXCoordinate() >= 995 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageOne stageOne = new StageOne();
-                    Greenfoot.setWorld(stageOne);
+                    Greenfoot.setWorld(new StageOne(50, 350));
                     whichStage = 1;
-                    soldier.setLocation(50, 350);
+                    //soldier.setLocation(50, 350);
                 }
               
                 break;
@@ -228,10 +217,9 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierXCoordinate() >= 995 && 
                     soldier.getSoldierYCoordinate() > 220 && 
                     soldier.getSoldierYCoordinate() < 480) {
-                    StageSix stageSix = new StageSix();
-                    Greenfoot.setWorld(stageSix);
+                    Greenfoot.setWorld(new StageSix(50, 350));
                     whichStage = 6;
-                    soldier.setLocation(50, 350);
+                    //soldier.setLocation(50, 350);
                 }
                  
                 break;
@@ -240,10 +228,9 @@ public class ZombieWorld extends World
                 if (soldier.getSoldierYCoordinate() <= 5 && 
                     soldier.getSoldierXCoordinate() > 400 && 
                     soldier.getSoldierXCoordinate() < 600) {
-                    StageOne stageOne = new StageOne();
-                    Greenfoot.setWorld(stageOne);
+                    Greenfoot.setWorld(new StageOne(500, 650));
                     whichStage = 1;
-                    soldier.setLocation(500, 650);
+                    //soldier.setLocation(500, 650);
                 }
                 break;
         }
@@ -353,6 +340,4 @@ public class ZombieWorld extends World
     public void increaseWave(){
         
     }
-    
-    
 }

@@ -13,8 +13,9 @@ public class StageSeven extends ZombieWorld
      * Constructor for objects of class StageSeven.
      * 
      */
-    public StageSeven()
+    public StageSeven(int x, int y)
     {
+        soldier.setLocation(x, y);
         populate();
     }
     public void populate() {

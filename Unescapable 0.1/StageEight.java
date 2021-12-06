@@ -13,7 +13,8 @@ public class StageEight extends ZombieWorld
      * Constructor for objects of class StageEight.
      * 
      */
-    public StageEight()
+    public StageEight(int x, int y)
     {
+        soldier.setLocation(x, y);
     }
 }

@@ -13,8 +13,9 @@ public class StageThree extends ZombieWorld
      * Constructor for objects of class StageThree.
      * 
      */
-    public StageThree()
+    public StageThree(int x, int y)
     {
+        soldier.setLocation(x, y);
         populate();
     }
     public void populate() {
