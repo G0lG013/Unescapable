@@ -8,14 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Credits extends Button
 {
+    private GreenfootImage credit;
     public Credits()
     {
-        GreenfootImage startButton = new GreenfootImage(70, 30);
-        Font adjustedFont = new Font(20);
-        startButton.setFont(adjustedFont);
-        startButton.drawString("Credits", 0, 30);
-        startButton.setColor(Color.WHITE);
-        setImage(startButton);
+        credit = new GreenfootImage("Credits.png");
+        //Font adjustedFont = new Font(20);
+        //startButton.setFont(adjustedFont);
+        //startButton.drawString("Credits", 0, 30);
+        //startButton.setColor(Color.WHITE);
+        setImage(credit);
     }
     
     /**

@@ -7,13 +7,15 @@ import greenfoot.*;
  */
 public class Exit extends Button
 {
+    private GreenfootImage exit;
     public Exit() {
-        GreenfootImage startButton = new GreenfootImage(50, 30);
-        Font adjustedFont = new Font(30);
-        startButton.setFont(adjustedFont);
-        startButton.drawString("Exit", 0, 30);
-        startButton.setColor(Color.WHITE);
-        setImage(startButton);
+        exit = new GreenfootImage("Exit.png");
+        exit.scale(140, 130);
+        //Font adjustedFont = new Font(30);
+        //startButton.setFont(adjustedFont);
+        //startButton.drawString("Exit", 0, 30);
+        //startButton.setColor(Color.WHITE);
+        setImage(exit);
     }
     
     /**

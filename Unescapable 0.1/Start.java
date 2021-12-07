@@ -8,13 +8,15 @@ import greenfoot.*;
  */
 public class Start extends Button
 {
+    private GreenfootImage start;
     public Start() {
-        GreenfootImage startButton = new GreenfootImage(65, 30);
-        Font adjustedFont = new Font(30);
-        startButton.setFont(adjustedFont);
-        startButton.drawString("Start", 0, 30);
-        startButton.setColor(Color.WHITE);
-        setImage(startButton);
+        start = new GreenfootImage("Start.png");
+        start.scale(150, 150);
+        //Font adjustedFont = new Font(30);
+        //startButton.setFont(adjustedFont);
+        //startButton.drawString("Start", 0, 30);
+        //startButton.setColor(Color.WHITE);
+        setImage(start);
     }
     
     /**

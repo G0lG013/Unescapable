@@ -15,8 +15,7 @@ public class Menu extends World
     public Menu()
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
-        super(1000, 700, 1); 
-        showText("Unescapable", 500, 200);
+        super(1000, 700, 1);
         prepare();
     }
 
@@ -32,13 +31,15 @@ public class Menu extends World
     private void prepare()
     {
         Start start = new Start();
-        addObject(start,500,480);
+        addObject(start,500,400);
         //start.setLocation(500,480);
         Exit exit = new Exit();
-        addObject(exit,500,570);
+        addObject(exit,500,500);
         //exit.setLocation(500,570);
         Credits credits = new Credits();
-        addObject(credits, 900, 650);
+        addObject(credits, 890, 600);
         //credits.setLocation(900, 600);
+        Finger finger = new Finger();
+        addObject(finger, 390, 400);
     }
 }
