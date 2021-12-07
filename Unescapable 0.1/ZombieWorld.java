@@ -19,6 +19,13 @@ public class ZombieWorld extends World
     private GifImage hpGif2 = new GifImage("Health2.gif");;
     private GifImage hpGif1 = new GifImage("Health1.gif");
     
+    
+     //A static variable which counts number of zombies inside the world
+    public static int numOfZombies;
+    
+    //A static variable which counts the number of dead zombies in the world
+    public static int deadZombiesInWorld;
+    
    
     //initialize a variable name waveLevel with a data type of integer
     public static int waveLevel;
@@ -57,6 +64,11 @@ public class ZombieWorld extends World
         zombieSpawnDelay = 50;
         
         addObject(hp, 100, 625);
+        
+        //Set the default value of numOfZombies to 10
+        numOfZombies = 10;
+        
+        deadZombiesInWorld = 0;
         
         setPaintOrder(Soldier.class, Zombie.class, Part.class, Bandage.class, DeadZombie.class);
     }
@@ -105,6 +117,7 @@ public class ZombieWorld extends World
      */
     public void changeStage()
     {
+       // if(noMoreZombies()){
         switch (whichStage) {
             case 1: 
                 // If soldier is in StageOne and wants to go to StageTwo
@@ -241,7 +254,8 @@ public class ZombieWorld extends World
                     //soldier.setLocation(500, 650);
                 }
                 break;
-        }
+            }
+        //}
     }
     
     /**
@@ -338,11 +352,27 @@ public class ZombieWorld extends World
         }
     }
     
-  //  public boolean noMoreZombies(){
-     //   boolean result = false;
-    //    if()    
-  //      return result;
-  //  }
+   /**
+     * A method that checks if theres no more zombies in the each stage or in the world.
+     */
+    public boolean noMoreZombies(){
+        
+        
+        if(zombieCounter <= zombiesKilled()){
+            return true;
+        }else{
+          return false;  
+        }
+        
+    }
+    
+     /**
+     * A method that returns the number of zombies killed.
+     */
+    public int zombiesKilled(){
+        return deadZombiesInWorld;
+    
+    }
     
     public void increaseWave(){
         

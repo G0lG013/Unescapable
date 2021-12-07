@@ -12,16 +12,18 @@ public class Menu extends World
      * Constructor for objects of class Menu.
      * 
      */
+   // Greenfoot image = get;
     public Menu()
     {    
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
         prepare();
+         //image.scale();
     }
 
     public void act() 
     {
-        
+       
     }
 
     /**

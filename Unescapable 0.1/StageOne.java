@@ -10,8 +10,10 @@ public class StageOne extends ZombieWorld
 {
 
     public StageOne() {
-        addFence();
+        //addFence();
+        prepare();
     }
+
     /**
      * Constructor for objects of class StageOne.
      * 
@@ -19,13 +21,13 @@ public class StageOne extends ZombieWorld
     public StageOne(int x, int y)
     {
         soldier.setLocation(x, y);
-       addFence();
+      //  addFence();
     }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    
+
     /**
      * Adding fence to StageOne
      */
@@ -63,5 +65,14 @@ public class StageOne extends ZombieWorld
             VerticalFence verticalFence = new VerticalFence();
             addObject(verticalFence, 990, 540 + (i * 95));
         }
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+       
     }
 }

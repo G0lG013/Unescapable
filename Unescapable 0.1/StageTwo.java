@@ -16,7 +16,7 @@ public class StageTwo extends ZombieWorld
     public StageTwo(int x, int y)
     {
         soldier.setLocation(x, y);
-        addFence();
+       // addFence();
     }
     
     /**

@@ -20,6 +20,7 @@ public class TankZombie extends Zombie
      */
     public void act()
     {
+        setImage(gifImage.getCurrentImage());
         look();
         move(1);
         hitTankZombie();

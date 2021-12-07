@@ -19,7 +19,8 @@ public class Soldier extends Actor
     private int hitCd;
     private int hitCdTimer;
     Bandage bandage = new Bandage();
-    
+    //declaring an object from DeadZombie class (to get the image)
+    DeadZombie deadZombie = new DeadZombie();
     /**
      * Constructor
      */
@@ -116,7 +117,11 @@ public class Soldier extends Actor
         if (isTouching(Zombie.class) && hitCdTimer >= hitCd) {
             hpCount--;
             hitCdTimer = 0;
+            Greenfoot.playSound("Pain.wav");
             if (hpCount <= 0) {
+                Greenfoot.playSound("die.wav");
+                setImage(deadZombie.getImage());
+                getWorld().addObject(new GameOver(), 500, 350);
                 Greenfoot.stop();
             }
         }
@@ -145,6 +150,8 @@ public class Soldier extends Actor
             pb.setRotation(this.getRotation());
            //reset the delayCount so that it will reincrease from act method and reavalute from if statement above. 
            delayPistolCount = 0;
+           //Sound added.
+           Greenfoot.playSound("gunShot.wav");
         }
     }
     

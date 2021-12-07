@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class FastZombie extends Zombie
 {
     private int fastZombieHp;
-    
+     GifImage gifImage = new GifImage("SpitterZombie.gif");
     public FastZombie(int fastZombieHp) {
         this.fastZombieHp = fastZombieHp;
     }
@@ -19,6 +19,7 @@ public class FastZombie extends Zombie
      */
     public void act()
     {
+        setImage(gifImage.getCurrentImage());
         look();
         move(2);
         hitFastZombie();

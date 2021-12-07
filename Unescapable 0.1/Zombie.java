@@ -67,7 +67,9 @@ public class Zombie extends Actor
             if (Greenfoot.getRandomNumber(100) < 7) {
                 getWorld().addObject(new Bandage(), getX(), getY());
             }
-            getWorld().addObject(new DeadZombie(), getX(), getY());
+            //plays the sound of zombie when its killed.
+            Greenfoot.playSound("zombieDead.wav"); 
+            getWorld().addObject(new Blood(), getX(), getY());
             getWorld().removeObject(this);
             numDeadZombies++;// if zombie dies then increment the number of dead zombies
         }
