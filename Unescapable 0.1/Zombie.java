@@ -24,7 +24,7 @@ public class Zombie extends Actor
         this.zombieHp = zombieHp;
     }
     
-    private GifImage zombiegif = new GifImage("zombieGif.gif");
+    private GifImage zombiegif = new GifImage("Zombie_Soldier.gif");
     
     /**
      * Act - do whatever the Zombie wants to do. This method is called whenever
@@ -64,9 +64,10 @@ public class Zombie extends Actor
     
     public void killZombie() {
         if (zombieHp == 0){
-            if (Greenfoot.getRandomNumber(100) < 10) {
+            if (Greenfoot.getRandomNumber(100) < 7) {
                 getWorld().addObject(new Bandage(), getX(), getY());
             }
+            getWorld().addObject(new DeadZombie(), getX(), getY());
             getWorld().removeObject(this);
             numDeadZombies++;// if zombie dies then increment the number of dead zombies
         }

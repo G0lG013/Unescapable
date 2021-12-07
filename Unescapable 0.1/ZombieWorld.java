@@ -52,6 +52,7 @@ public class ZombieWorld extends World
         
         zombieSpawnDelay = 50;
         
+        setPaintOrder(Soldier.class, Zombie.class, Part.class, Bandage.class, DeadZombie.class);
     }
     
     public void act(){
