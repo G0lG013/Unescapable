@@ -9,15 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Intro extends World
 {
     private String[] dialogue = 
-        {"This is how it started...", "A scientist came and approach me about a mission", 
-        "I agreed to do it", "I went to his lab on the night of the mission",
-        "Scientist: Hello, nice to see you!", "Soldier: Hi, nice to see you again",
-        "Scientist: So this is my time machine", "Soldier: I'll be going to the pass or future",
-        "Scientist: The future, you ready?", "Soldier: I hope am",
-        "Please proceed near the portal and i'll activate it", "Soldier: Roger!",
-        "Scientist: The portal is open. You can go ahead", 
+        {"This is how it started...", "A scientist came and approached a soldier about a mission", 
+        "The soldier agreed to do it", "The soldier went to the lab of the scientist on the night of the mission",
+        "\"So this is my time machine\"", "\"I'll be going to the pass or future\"",
+        "\"The future. Hope you're ready\"",
+        "\"Please proceed near the portal and i'll activate it\"", "\"Roger that!\"",
+        "\"The portal is open. You can go ahead\"", 
         "After entering the portal. Soldier is surprised on what he see",
-        "Soldier: My God! What happened to this place"};
+        "\"OH MY GOD! What happened to this place\""};
         
     private int curDialogue;
     
@@ -53,7 +52,7 @@ public class Intro extends World
     {
         if (curDialogue < dialogue.length && countToCooldown >= cooldownDialogue
         && (Greenfoot.isKeyDown("enter") || Greenfoot.mouseClicked(this))) {
-            showText(dialogue[curDialogue], 500, 10 + (50 * curDialogue));
+            showText(dialogue[curDialogue], 500, 70 + (50 * curDialogue));
             curDialogue++;
             countToCooldown = 0;
         }
