@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TankZombie extends Zombie
 {
+    GifImage gifImage = new GifImage("HeavyZombie.gif");
     private int tankZombieHp;
     
     public TankZombie(int tankZombieHp) {

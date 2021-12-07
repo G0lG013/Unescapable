@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Soldier extends Actor
 {   
     //Declared an instance object gifImage with a value of the survivor gif file from image.
-    GifImage gifImage = new GifImage("survivorGif.gif");
+    GifImage gifImage = new GifImage("soldierWithGunStanding.gif");
     //Declared three instance variables with each data types of int.
     private int pistolReloadTime;
     private int delayPistolCount;
