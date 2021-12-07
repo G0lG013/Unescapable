@@ -13,7 +13,11 @@ public class ZombieWorld extends World
     public Soldier soldier;
     public static MouseInfo mouseCoordinate = Greenfoot.getMouseInfo();
     public static boolean crossHairInWorld;
-    public static int whichStage;  
+    public static int whichStage;
+    
+    private GifImage hpGif3 = new GifImage("FullHealth4.gif"); 
+    private GifImage hpGif2 = new GifImage("Health2.gif");;
+    private GifImage hpGif1 = new GifImage("Health1.gif");
     
    
     //initialize a variable name waveLevel with a data type of integer
@@ -24,7 +28,7 @@ public class ZombieWorld extends World
     
     public int zombieSpawnDelay;
     public int zombieSpawnTimer;
- 
+     public Hp hp = new Hp();
     /**
      * Constructor for objects of class ZombieWorld.
      * 
@@ -52,6 +56,8 @@ public class ZombieWorld extends World
         
         zombieSpawnDelay = 50;
         
+        addObject(hp, 100, 625);
+        
         setPaintOrder(Soldier.class, Zombie.class, Part.class, Bandage.class, DeadZombie.class);
     }
     
@@ -62,6 +68,7 @@ public class ZombieWorld extends World
         zombieSpawnLocation();
         changeStage();
         zombieSpawnTimer++;
+        changeHp();
     }
     
     public void addCrossHair(){
@@ -329,7 +336,6 @@ public class ZombieWorld extends World
             zombieSpawnTimer = 0;
         
         }
-    
     }
     
   //  public boolean noMoreZombies(){
@@ -340,5 +346,16 @@ public class ZombieWorld extends World
     
     public void increaseWave(){
         
+    }
+    public void changeHp() {
+        if (soldier.getHpCount() == 3) {
+            hp.setImage(hpGif3.getCurrentImage());
+        }
+        if (soldier.getHpCount() == 2) {
+            hp.setImage(hpGif2.getCurrentImage());
+        }
+        if (soldier.getHpCount() == 1) {
+            hp.setImage(hpGif1.getCurrentImage());
+        }
     }
 }

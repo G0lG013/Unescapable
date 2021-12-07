@@ -171,5 +171,7 @@ public class Soldier extends Actor
     public int getHpCount() {
         return this.hpCount;
     }
-    
+    public Soldier getSoldier() {
+        return this;
+    }
 }
