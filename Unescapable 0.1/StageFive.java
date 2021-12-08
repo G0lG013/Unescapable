@@ -16,10 +16,5 @@ public class StageFive extends ZombieWorld
     public StageFive(int x, int y)
     {
         soldier.setLocation(x, y);
-        populate();
-    }
-    
-    public void populate() {
-       addObject(new FastZombie(10), 500, 200);
     }
 }
