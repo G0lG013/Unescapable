@@ -16,5 +16,6 @@ public class StageFive extends ZombieWorld
     public StageFive(int x, int y)
     {
         soldier.setLocation(x, y);
+        soldier.setRotation(0);
     }
 }

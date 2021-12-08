@@ -26,7 +26,7 @@ public class Soldier extends Actor
      */
     public Soldier()
     {  
-        //Set the value to 20 inside the constructor. if we change this value less than 20 then, the fire rate of the pistol will increased.  
+       //Set the value to 20 inside the constructor. if we change this value less than 20 then, the fire rate of the pistol will increased.  
        pistolReloadTime = 20;
        //initialize the value to 0 inside the contructor
        delayPistolCount = 0;
@@ -73,7 +73,6 @@ public class Soldier extends Actor
         if(Greenfoot.isKeyDown("w"))
         {   //Soldier will move forward
             move(2);
-             
             //If shift and w is pressed the soldier will run.
             if(Greenfoot.isKeyDown("shift")){
                 move(3);
@@ -95,7 +94,7 @@ public class Soldier extends Actor
         }
         
         //Calls a method shootPistol() when the user pressed space in the keyboard
-          if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("space"))
         {   
             shootPistol();
         
@@ -178,6 +177,7 @@ public class Soldier extends Actor
     public int getHpCount() {
         return this.hpCount;
     }
+    
     public Soldier getSoldier() {
         return this;
     }

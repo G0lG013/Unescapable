@@ -10,7 +10,8 @@ public class Part extends Actor
 {
     private int amountOfParts = 0;
     
-    public Part() {
+    public Part() 
+    {
         
     }
     
@@ -29,5 +30,4 @@ public class Part extends Actor
             getWorld().removeObject(this);
         }
     }
-    
 }

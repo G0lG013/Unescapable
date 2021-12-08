@@ -18,9 +18,10 @@ public class StageOne extends ZombieWorld
      * Constructor for objects of class StageOne.
      * 
      */
-    public StageOne(int x, int y)
+    public StageOne(int x, int y, int dir)
     {
         soldier.setLocation(x, y);
+        soldier.setRotation(dir);
       //  addFence();
     }
     /**

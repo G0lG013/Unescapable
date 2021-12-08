@@ -16,12 +16,4 @@ public class VerticalFence extends Actor
     {
         
     }
-    
-    /**
-     * 
-     */
-    public void touchFence() 
-    {
-        if (getX() > 400) setLocation(400, getY()); 
-    }
 }

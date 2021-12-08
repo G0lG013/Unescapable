@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DeadZombie extends Actor
 {
-    public DeadZombie() {
+    public DeadZombie()
+    {
         
     }
+    
     /**
      * Act - do whatever the DeadZombie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

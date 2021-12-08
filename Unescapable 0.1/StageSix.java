@@ -13,8 +13,9 @@ public class StageSix extends ZombieWorld
      * Constructor for objects of class StageSix.
      * 
      */
-    public StageSix(int x, int y)
+    public StageSix(int x, int y, int dir)
     {
         soldier.setLocation(x, y);
+        soldier.setRotation(dir);
     }
 }

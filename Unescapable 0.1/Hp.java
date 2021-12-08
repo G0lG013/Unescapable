@@ -11,6 +11,7 @@ public class Hp extends Actor
     public Hp() {
         getImage().scale(100,100);
     }
+    
     /**
      * Act - do whatever the Hp wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,5 +20,4 @@ public class Hp extends Actor
     {
         getImage().scale(100,100);
     }
-        
 }

@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Crosshair extends Actor
 {
-
-   
     /**
      * Act - do whatever the Crosshair wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,6 +19,7 @@ public class Crosshair extends Actor
         followCursor();
         
     }
+    
     /**
      * A method that follows Cursor by setting the location of this class to the cursor's current x and y position 
      * in realtime. In addition, the crosshair image also turns while following the cursor.
@@ -37,6 +36,4 @@ public class Crosshair extends Actor
             turn(5);
         }
     }
-    
-    
 }

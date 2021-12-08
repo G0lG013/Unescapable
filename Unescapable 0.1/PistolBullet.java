@@ -14,13 +14,12 @@ public class PistolBullet extends Actor
      */
     public void act()
     {
-        // Add your action code here.
-       
-        move(10);
+       // Add your action code here.
+       move(10);
        //A method that removes the bullet once its reach the edge of the world.
-        removeBulletAtEdge();
-      
+       removeBulletAtEdge();
     }
+    
     /**
      * A method that removes the bullet at the edge.
      */
@@ -29,7 +28,4 @@ public class PistolBullet extends Actor
             getWorld().removeObject(this);
         }
     }
-    
-   
-    
 }

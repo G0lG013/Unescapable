@@ -16,6 +16,7 @@ public class StageThree extends ZombieWorld
     public StageThree(int x, int y)
     {
         soldier.setLocation(x, y);
+        soldier.setRotation(270);
         populate();
     }
     public void populate() {

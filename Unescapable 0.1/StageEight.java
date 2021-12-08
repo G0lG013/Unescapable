@@ -17,6 +17,7 @@ public class StageEight extends ZombieWorld
     public StageEight(int x, int y)
     {
         soldier.setLocation(x, y);
+        soldier.setRotation(90);
         timer = 2000;
     }
     public void act() {

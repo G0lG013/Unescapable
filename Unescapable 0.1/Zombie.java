@@ -9,10 +9,8 @@ public class Zombie extends Actor
 {
     private int zombieHp;
     
-    
     //NumberOfDeadZombie
     private int numDeadZombies = 0;
-    
     public Zombie() {
         
     }
@@ -78,6 +76,4 @@ public class Zombie extends Actor
     public int getNumDeadZombies(){
         return numDeadZombies; 
     }
-    
-    
 }
