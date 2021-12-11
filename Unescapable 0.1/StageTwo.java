@@ -17,37 +17,45 @@ public class StageTwo extends ZombieWorld
     {
         soldier.setLocation(x, y);
         soldier.setRotation(dir);
-       // addFence();
+        addWall();
     }
     
     /**
-     * Adding fence to StageTwo
+     * Adding wall to StageTwo
      */
-    public void addFence()
+    public void addWall()
     {
         for (int i = 0; i < 4; i++) {
-            HorizontalFence horizontalFence = new HorizontalFence();
-            addObject(horizontalFence, 48 + (i * 95), 10);
-        } 
-        for (int i = 0; i < 4; i++) {
-            HorizontalFence horizontalFence = new HorizontalFence();
-            addObject(horizontalFence, 667 + (i * 95), 10);
+            Wall wall = new Wall();
+            addObject(wall, 10 + (i * 45), 15);
         }
         for (int i = 0; i < 4; i++) {
-            HorizontalFence horizontalFence = new HorizontalFence();
-            addObject(horizontalFence, 48 + (i * 95), 690);
+            Wall wall = new Wall();
+            addObject(wall, 990 - (i * 45), 15);
         }
         for (int i = 0; i < 4; i++) {
-            HorizontalFence horizontalFence = new HorizontalFence();
-            addObject(horizontalFence, 667 + (i * 95), 690);
+            Wall wall = new Wall();
+            addObject(wall, 10 + (i * 45), 685);
         }
-        for (int i = 0; i < 7; i++) {
-            VerticalFence verticalFence = new VerticalFence();
-            addObject(verticalFence, 10, 65 + (i * 95));
+        for (int i = 0; i < 4; i++) {
+            Wall wall = new Wall();
+            addObject(wall, 990 - (i * 45), 685);
         }
-        for (int i = 0; i < 7; i++) {
-            VerticalFence verticalFence = new VerticalFence();
-            addObject(verticalFence, 990, 65 + (i * 95));
+        for (int i = 0; i < 4; i++) {
+            Wall2 wall2 = new Wall2();
+            addObject(wall2, 15, 10 + (i * 45));
+        }
+        for (int i = 0; i < 4; i++) {
+            Wall2 wall2 = new Wall2();
+            addObject(wall2, 15, 690 - (i * 45));
+        }
+        for (int i = 0; i < 4; i++) {
+            Wall2 wall2 = new Wall2();
+            addObject(wall2, 985, 10 + (i * 45));
+        }
+        for (int i = 0; i < 4; i++) {
+            Wall2 wall2 = new Wall2();
+            addObject(wall2, 985, 690 - (i * 45));
         }
     }
 }

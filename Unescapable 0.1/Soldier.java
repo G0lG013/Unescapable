@@ -87,17 +87,15 @@ public class Soldier extends Actor
         
         // Now that we moved, are we inside a fence (touching)?
         // IF yes, then "cancel" the move
-        if (isTouching(HorizontalFence.class) || isTouching(VerticalFence.class)) 
+        if (isTouching(Wall.class) || isTouching(Wall2.class)) 
         {
             setLocation(curX, curY);
-
         }
         
         //Calls a method shootPistol() when the user pressed space in the keyboard
         if(Greenfoot.isKeyDown("space"))
         {   
             shootPistol();
-        
         }
     }
     
