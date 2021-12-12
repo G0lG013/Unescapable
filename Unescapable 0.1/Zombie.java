@@ -14,6 +14,7 @@ public class Zombie extends Actor
     public Zombie() {
         
     }
+    
     /**
      * Zombie constructor
      */

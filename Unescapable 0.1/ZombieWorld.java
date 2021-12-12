@@ -82,7 +82,6 @@ public class ZombieWorld extends World
     }
     
     public void act(){
-       
         //A method that adds the crossHair.
         addCrossHair();
         zombieSpawnLocation();
@@ -129,7 +128,7 @@ public class ZombieWorld extends World
     public void changeStage()
     {
          if(noMoreZombies()){
-        switch (whichStage) {
+            switch (whichStage) {
             case 1: 
                 // If soldier is in StageOne and wants to go to StageTwo
                 if (soldier.getSoldierYCoordinate() <= 5 && 

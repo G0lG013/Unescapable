@@ -19,6 +19,7 @@ public class Menu extends World
         super(1000, 700, 1);
         prepare();
          //image.scale();
+        MenuInfo();
     }
 
     public void act() 
@@ -43,5 +44,19 @@ public class Menu extends World
         //credits.setLocation(900, 600);
         Finger finger = new Finger();
         addObject(finger, 390, 400);
+    }
+    
+    /**
+     * Extra information we need to add in the menu
+     */
+    public void MenuInfo() {
+        showText("MAJED SOLIS DE GUZMAN", 210, 40);
+        showText("CALYSTA THEESA", 450, 40);
+        showText("JERICHO NIEVA", 640, 40);
+        showText("RACHELLE BADUA", 840, 40);
+        showText("Game Programming 1", 220, 660);
+        showText("Tassia Araujo", 440, 660);
+        showText("Ivan Miloslavov", 640, 660);
+        showText("Fall 2021", 820, 660);
     }
 }

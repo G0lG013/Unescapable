@@ -22,7 +22,6 @@ public class Soldier extends Actor
     //declaring an object from DeadZombie class (to get the image)
     DeadZombie deadZombie = new DeadZombie();
     private boolean isSoldierDead;
-    //
     
     /**
      * Constructor
@@ -36,8 +35,7 @@ public class Soldier extends Actor
        hitCd = 50; 
        hitCdTimer = 0;
        isSoldierDead = false;
-    hpCount = 3;
-      
+       hpCount = 3;
     }
     
     /**
@@ -92,7 +90,7 @@ public class Soldier extends Actor
         
         // Now that we moved, are we inside a fence (touching)?
         // IF yes, then "cancel" the move
-        if (isTouching(HorizontalFence.class) || isTouching(VerticalFence.class)) 
+        if (isTouching(Wall.class) || isTouching(Wall2.class)) 
         {
             setLocation(curX, curY);
 
@@ -102,9 +100,8 @@ public class Soldier extends Actor
         if(Greenfoot.isKeyDown("space"))
         {   
             shootPistol();
-        
         }
-    }
+        }
     }
     
     /**
@@ -122,7 +119,6 @@ public class Soldier extends Actor
      * Note: Going back to main menu is not yet implemented.
      */
     public void die() {
-        
         if (isTouching(Zombie.class) && hitCdTimer >= hitCd && hpCount > 0) {
             hpCount--;
             hitCdTimer = 0;
@@ -130,23 +126,16 @@ public class Soldier extends Actor
             isSoldierDead = false;
         }
       
-        
-         if (hpCount == 0) {
-                Greenfoot.playSound("die.wav");
-                hpCount = -1;   
-            }
+        if (hpCount == 0) {
+            Greenfoot.playSound("die.wav");
+            hpCount = -1;   
+        }
          
-            if(hpCount == -1){
-                
-              
-                setImage(deadZombie.getImage());
-                
-            }
+        if(hpCount == -1){
+            setImage(deadZombie.getImage());
+        }
     }
-    
-   
-    
-    
+
     public void increaseHp() {
         if (isTouching(Bandage.class)) {
             if (hpCount < 3) {
