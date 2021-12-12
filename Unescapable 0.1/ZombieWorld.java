@@ -10,15 +10,16 @@ public class ZombieWorld extends World
 {
     //static instance Objects & variable with boolean data type.
     public static Crosshair crossHair = new Crosshair();
-    public Soldier soldier;
+    public static Soldier soldier = soldier = new Soldier();
     public static MouseInfo mouseCoordinate = Greenfoot.getMouseInfo();
     public static boolean crossHairInWorld;
     public static int whichStage;
-    
+
     private GifImage hpGif3 = new GifImage("FullHealth4.gif"); 
     private GifImage hpGif2 = new GifImage("Health2.gif");;
     private GifImage hpGif1 = new GifImage("Health1.gif");
     
+    private Finger finger = new Finger();
     
     //A static variable which counts number of zombies inside the world
     public static int numOfZombies;
@@ -37,7 +38,7 @@ public class ZombieWorld extends World
     
     public int zombieSpawnDelay;
     public int zombieSpawnTimer;
-    public Hp hp = new Hp();
+    public static Hp hp;
     /**
      * Constructor for objects of class ZombieWorld.
      * 
@@ -52,7 +53,8 @@ public class ZombieWorld extends World
         crossHairInWorld = false;
         
         //adds the object in the middle of World.
-        soldier = new Soldier();
+        
+        hp = new Hp();
         addObject(soldier, 300, 200);
         
         whichStage = 1;
@@ -83,6 +85,7 @@ public class ZombieWorld extends World
         changeStage();
         zombieSpawnTimer++;
         changeHp();
+        soldier.setHpCount(soldier.getHpCount());
     }
     
     public void addCrossHair(){
@@ -129,7 +132,7 @@ public class ZombieWorld extends World
                     soldier.getSoldierXCoordinate() < 600) {
                     Greenfoot.setWorld(new StageTwo(500, 650, 270));
                     whichStage = 2;
-                    //soldier.setLocation(500, 650);
+                    soldier.setLocation(500, 650);
                 }
                 // If soldier is in StageOne and wants to go to StageFour
                 if (soldier.getSoldierXCoordinate() >= 995 && 
@@ -375,14 +378,38 @@ public class ZombieWorld extends World
     }
     
     public void changeHp() {
+        
         if (soldier.getHpCount() == 3) {
             hp.setImage(hpGif3.getCurrentImage());
+           
         }
         if (soldier.getHpCount() == 2) {
             hp.setImage(hpGif2.getCurrentImage());
+           
         }
         if (soldier.getHpCount() == 1) {
             hp.setImage(hpGif1.getCurrentImage());
+         
         }
+       
+         goBacktoMenu();
+       
+        
+    }
+    /**
+     * A method that goes back to menu when the player lose the game
+     */
+    public void goBacktoMenu(){
+        //addObject(finger, 100, 100);
+      Zombie zombie = new Zombie();
+         if (soldier.getHpCount() <= 0){
+            hp.setImage("EmptyHeart.png");
+            addObject(new GameOver(), 500, 350);
+            //addObject(new Finger(), 350, 550);
+            addObject(new BackToMenu(), 500, 550);
+           
+          // Greenfoot.stop();
+        }
+        
     }
 }

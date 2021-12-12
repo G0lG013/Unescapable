@@ -17,45 +17,5 @@ public class StageSix extends ZombieWorld
     {
         soldier.setLocation(x, y);
         soldier.setRotation(dir);
-        addWall();
-    }
-    
-    /**
-     * Adding wall to StageSix
-     */
-    public void addWall()
-    {
-        for (int i = 0; i < 7; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 10 + (i * 45), 15);
-        }
-        for (int i = 0; i < 7; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 990 - (i * 45), 15);
-        }
-        for (int i = 0; i < 7; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 10 + (i * 45), 685);
-        }
-        for (int i = 0; i < 7; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 990 - (i * 45), 685);
-        }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 15, 10 + (i * 45));
-        }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 15, 690 - (i * 45));
-        }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 985, 10 + (i * 45));
-        }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 985, 690 - (i * 45));
-        }
     }
 }

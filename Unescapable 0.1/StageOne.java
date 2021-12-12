@@ -10,7 +10,7 @@ public class StageOne extends ZombieWorld
 {
 
     public StageOne() {
-        addWall();
+        //addFence();
         prepare();
     }
 
@@ -22,45 +22,49 @@ public class StageOne extends ZombieWorld
     {
         soldier.setLocation(x, y);
         soldier.setRotation(dir);
-        addWall();
+        addFence();
     }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
 
     /**
-     * Adding wall to StageOne
+     * Adding fence to StageOne
      */
-    public void addWall()
+    public void addFence()
     {
         for (int i = 0; i < 4; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 10 + (i * 45), 15);
+            HorizontalFence horizontalFence = new HorizontalFence();
+            addObject(horizontalFence, 48 + (i * 95), 10);
+        } 
+        for (int i = 0; i < 4; i++) {
+            HorizontalFence horizontalFence = new HorizontalFence();
+            addObject(horizontalFence, 667 + (i * 95), 10);
         }
         for (int i = 0; i < 4; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 990 - (i * 45), 15);
+            HorizontalFence horizontalFence = new HorizontalFence();
+            addObject(horizontalFence, 48 + (i * 95), 690);
         }
         for (int i = 0; i < 4; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 10 + (i * 45), 685);
+            HorizontalFence horizontalFence = new HorizontalFence();
+            addObject(horizontalFence, 667 + (i * 95), 690);
         }
-        for (int i = 0; i < 4; i++) {
-            Wall wall = new Wall();
-            addObject(wall, 990 - (i * 45), 685);
+        for (int i = 0; i < 2; i++) {
+            VerticalFence verticalFence = new VerticalFence();
+            addObject(verticalFence, 10, 65 + (i * 95));
         }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 15, 10 + (i * 45));
+        for (int i = 0; i < 2; i++) {
+            VerticalFence verticalFence = new VerticalFence();
+            addObject(verticalFence, 10, 540 + (i * 95));
         }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 15, 690 - (i * 45));
+        for (int i = 0; i < 2; i++) {
+            VerticalFence verticalFence = new VerticalFence();
+            addObject(verticalFence, 990, 65 + (i * 95));
         }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 985, 10 + (i * 45));
-        }
-        for (int i = 0; i < 1; i++) {
-            Wall2 wall2 = new Wall2();
-            addObject(wall2, 985, 690 - (i * 45));
+        for (int i = 0; i < 2; i++) {
+            VerticalFence verticalFence = new VerticalFence();
+            addObject(verticalFence, 990, 540 + (i * 95));
         }
     }
     

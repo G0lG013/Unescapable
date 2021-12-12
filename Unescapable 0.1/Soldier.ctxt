@@ -21,6 +21,7 @@ comment4.target=void\ direction()
 comment4.text=\r\n\ A\ method\ that\ enables\ to\ change\ the\ main\ character's\ direction\ based\ on\ the\ cursor's\ position.\r\n
 comment5.params=
 comment5.target=void\ die()
+comment5.text=\r\n\ Method\ that\ stops\ the\ gameplay\ when\ the\ soldier\ died.\r\n\ Note\:\ Going\ back\ to\ main\ menu\ is\ not\ yet\ implemented.\r\n
 comment6.params=
 comment6.target=void\ increaseHp()
 comment7.params=

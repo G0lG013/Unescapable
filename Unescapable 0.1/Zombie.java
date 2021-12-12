@@ -32,7 +32,7 @@ public class Zombie extends Actor
     {
         animate();
         look();
-        move(1);
+        moving(1);
         hitZombie();
         killZombie();
     }
@@ -50,7 +50,12 @@ public class Zombie extends Actor
      */
     public void look() {
         Actor soldier = (Actor)getWorld().getObjects(Soldier.class).get(0);
+    
         turnTowards(soldier.getX(), soldier.getY());
+    }
+    
+    public void moving(int move){
+        move(move);
     }
     
     public void hitZombie () {
