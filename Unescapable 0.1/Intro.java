@@ -63,6 +63,7 @@ public class Intro extends World
      */
     public void setStageOne() {
         if (curDialogue == dialogue.length) {
+            Greenfoot.setWorld(new ZombieWorld());
             Greenfoot.setWorld(new StageOne());
         }
     }

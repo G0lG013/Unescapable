@@ -10,7 +10,7 @@ public class ZombieWorld extends World
 {
     //static instance Objects & variable with boolean data type.
     public static Crosshair crossHair = new Crosshair();
-    public static Soldier soldier = soldier = new Soldier();
+    public static Soldier soldier = new Soldier();
     public static MouseInfo mouseCoordinate = Greenfoot.getMouseInfo();
     public static boolean crossHairInWorld;
     public static int whichStage;
@@ -39,6 +39,8 @@ public class ZombieWorld extends World
     public int zombieSpawnDelay;
     public int zombieSpawnTimer;
     public static Hp hp;
+    public boolean isSoldierDead;
+    
     /**
      * Constructor for objects of class ZombieWorld.
      * 
@@ -47,7 +49,7 @@ public class ZombieWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
-        
+       
         //set this variable to false since crossHair hasn't been added yet at the beginning of the game
         //this variable is used for either adding or removing crosshair inside the world
         crossHairInWorld = false;
@@ -69,6 +71,8 @@ public class ZombieWorld extends World
         
         addObject(hp, 100, 625);
         
+        isSoldierDead = false;
+       
         //Set the default value of numOfZombies to 10
         numOfZombies = 10;
         
@@ -85,7 +89,8 @@ public class ZombieWorld extends World
         changeStage();
         zombieSpawnTimer++;
         changeHp();
-        soldier.setHpCount(soldier.getHpCount());
+        //soldier.setHpCount(soldier.getHpCount());
+        //resetSoldierHp();
     }
     
     public void addCrossHair(){
@@ -401,15 +406,31 @@ public class ZombieWorld extends World
      */
     public void goBacktoMenu(){
         //addObject(finger, 100, 100);
-      Zombie zombie = new Zombie();
+        
          if (soldier.getHpCount() <= 0){
             hp.setImage("EmptyHeart.png");
             addObject(new GameOver(), 500, 350);
             //addObject(new Finger(), 350, 550);
             addObject(new BackToMenu(), 500, 550);
-           
-          // Greenfoot.stop();
+            isSoldierDead = true;
+            
+        }
+    }
+        public void resetSoldierHp(){
+            if(isSoldierDead == true && soldier.getHpCount() <= 0){
+                soldier.setHpCount(3);
+                isSoldierDead = false;
+                
+            }
         }
         
-    }
-}
+        
+    
+      
+        }
+        
+       
+        
+        
+        
+

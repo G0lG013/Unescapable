@@ -14,14 +14,14 @@ public class Soldier extends Actor
     private int pistolReloadTime;
     private int delayPistolCount;
     private int runningLimit;
-    public static int hpCount;
+    public int hpCount;
     //private int hpCount;
     private int hitCd;
     private int hitCdTimer;
     Bandage bandage = new Bandage();
     //declaring an object from DeadZombie class (to get the image)
     DeadZombie deadZombie = new DeadZombie();
-    
+    private boolean isSoldierDead;
     //
     
     /**
@@ -35,7 +35,9 @@ public class Soldier extends Actor
        delayPistolCount = 0;
        hitCd = 50; 
        hitCdTimer = 0;
-       hpCount = 3;
+       isSoldierDead = false;
+    hpCount = 3;
+      
     }
     
     /**
@@ -57,7 +59,7 @@ public class Soldier extends Actor
         direction();
         
         increaseHp();
-         
+        
         die();
         hitCdTimer++;
     }
@@ -120,30 +122,30 @@ public class Soldier extends Actor
      * Note: Going back to main menu is not yet implemented.
      */
     public void die() {
-        boolean soldierIsDead;
+        
         if (isTouching(Zombie.class) && hitCdTimer >= hitCd && hpCount > 0) {
             hpCount--;
             hitCdTimer = 0;
             Greenfoot.playSound("Pain.wav");
-            soldierIsDead = false;
+            isSoldierDead = false;
         }
       
         
          if (hpCount == 0) {
                 Greenfoot.playSound("die.wav");
-                
-                hpCount = -1;
-               
-                
+                hpCount = -1;   
             }
          
             if(hpCount == -1){
                 
-                
+              
                 setImage(deadZombie.getImage());
-                //getWorld().removeObject(zombie);
+                
             }
     }
+    
+   
+    
     
     public void increaseHp() {
         if (isTouching(Bandage.class)) {
