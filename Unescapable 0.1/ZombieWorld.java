@@ -128,7 +128,7 @@ public class ZombieWorld extends World
      */
     public void changeStage()
     {
-        // if(noMoreZombies()){
+         if(noMoreZombies()){
         switch (whichStage) {
             case 1: 
                 // If soldier is in StageOne and wants to go to StageTwo
@@ -260,6 +260,7 @@ public class ZombieWorld extends World
                 }
                 break;
             }
+        }
     }
     
     /**
@@ -362,7 +363,7 @@ public class ZombieWorld extends World
     public boolean noMoreZombies(){
         
         
-        if(zombieCounter <= zombiesKilled()){
+        if(zombieCounter <= getZombiesKilled()){
             return true;
         }else{
           return false;  
@@ -373,7 +374,8 @@ public class ZombieWorld extends World
      /**
      * A method that returns the number of zombies killed.
      */
-    public int zombiesKilled(){
+    public int getZombiesKilled(){
+    //Returns the number of deadZombiesInWorld which was incremented in killZombie method from Zombie class.
         return deadZombiesInWorld;
     
     }
@@ -416,17 +418,7 @@ public class ZombieWorld extends World
             
         }
     }
-        public void resetSoldierHp(){
-            if(isSoldierDead == true && soldier.getHpCount() <= 0){
-                soldier.setHpCount(3);
-                isSoldierDead = false;
-                
-            }
-        }
-        
-        
-    
-      
+
         }
         
        

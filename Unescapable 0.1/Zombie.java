@@ -8,7 +8,7 @@ import lang.stride.*;
 public class Zombie extends Actor
 {
     private int zombieHp;
-    
+     ZombieWorld zombieWorld = (ZombieWorld)getWorld();
     //NumberOfDeadZombie
     private int numDeadZombies = 0;
     public Zombie() {
@@ -74,7 +74,8 @@ public class Zombie extends Actor
             Greenfoot.playSound("zombieDead.wav"); 
             getWorld().addObject(new Blood(), getX(), getY());
             getWorld().removeObject(this);
-            numDeadZombies++;// if zombie dies then increment the number of dead zombies
+            // if zombie dies then increment the number of dead zombies in the world.
+            zombieWorld.deadZombiesInWorld++;
         }
     }
     
