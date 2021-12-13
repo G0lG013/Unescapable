@@ -8,14 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Credit extends World
 {
-
+    private GreenfootImage creditContent;
     /**
      * Constructor for objects of class Credit.
      * 
      */
     public Credit()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
+        creditContent = new GreenfootImage("CreditsContent.png");
+        creditContent.scale(800, 500);
+        getBackground().drawImage(creditContent, 110, 100);
     }
 }

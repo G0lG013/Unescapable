@@ -19,7 +19,6 @@ public class BackToMenu extends Button
      */
     public void act()
     {
- 
         backToMenuIsClicked();
         }
     
@@ -28,15 +27,15 @@ public class BackToMenu extends Button
      * In addition it also sets the Soldier's Hp  to full
      */
     public void backToMenuIsClicked(){
-           checkMouse();
-         if(Greenfoot.mouseClicked(this)) {
+        checkMouse();
+        if(Greenfoot.mouseClicked(this)) {
              //Gets the current object from zombieworld class.
              Soldier soldier = (Soldier)getWorld().getObjects(Soldier.class).get(0);
              //resets this current soldier object's hp count
              soldier.setHpCount(3);
              
              Greenfoot.setWorld(new Menu());
+        }
     }
-}
 
 }

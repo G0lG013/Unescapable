@@ -44,6 +44,9 @@ public class Menu extends World
         //credits.setLocation(900, 600);
         Finger finger = new Finger();
         addObject(finger, 390, 400);
+        
+        Instructions instruction = new Instructions();
+        addObject(instruction, 120, 600);
     }
     
     /**

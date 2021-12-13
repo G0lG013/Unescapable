@@ -16,7 +16,7 @@ public class Instruction extends World
     public Instruction()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(1000, 700, 1);
         showInstructions();
     }
     
@@ -28,7 +28,7 @@ public class Instruction extends World
         showText("W to move forward", 500, 175);
         showText("S to move backward", 500, 275);
         showText("Mouse to make the character face the same direction as the pointer", 500, 375);
-        showText("Shift to make teh character run / speed up", 500, 475);
+        showText("Shift to make the character run / speed up", 500, 475);
         showText("Spacebar to make soldier shoot", 500, 575);
     }
 }
