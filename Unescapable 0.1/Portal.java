@@ -18,6 +18,13 @@ public class Portal extends Actor
      */
     public void act()
     {
+        animate();
+    }
+    /**
+     * To animate the portal
+     */
+    public void animate() {
         setImage(gifImage.getCurrentImage());
+        getImage().scale(150, 150);
     }
 }

@@ -20,7 +20,7 @@ public class StageEight extends ZombieWorld
         soldier.setRotation(90);
         timer = 200;
         addWall();
-        addObject(new Computer(), 500, 500);
+        addObject(new Computer(), 950, 350);
     }
     
     public void act() {
@@ -83,7 +83,8 @@ public class StageEight extends ZombieWorld
     
     public void addPortal() {
         if (timer <= 0) {
-            addObject(new Portal(), 500, 200);
+            addObject(new Portal(), 500, 650);
         }
     }
+    
 }   

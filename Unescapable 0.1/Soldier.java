@@ -57,7 +57,7 @@ public class Soldier extends Actor
         direction();
         
         increaseHp();
-        
+        win();
         die();
         hitCdTimer++;
     }
@@ -161,6 +161,13 @@ public class Soldier extends Actor
            delayPistolCount = 0;
            //Sound added.
            Greenfoot.playSound("gunShot.wav");
+        }
+    }
+    
+    public void win() {
+        if (isTouching(Portal.class)) {
+            getWorld().showText("YOU WIN", 500, 500);
+            Greenfoot.stop();
         }
     }
     
