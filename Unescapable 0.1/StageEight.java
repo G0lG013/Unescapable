@@ -18,7 +18,7 @@ public class StageEight extends ZombieWorld
     {
         soldier.setLocation(x, y);
         soldier.setRotation(90);
-        timer = 200;
+        timer = 2500;
         addWall();
         addObject(new Computer(), 950, 350);
     }
