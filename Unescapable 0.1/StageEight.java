@@ -18,16 +18,22 @@ public class StageEight extends ZombieWorld
     {
         soldier.setLocation(x, y);
         soldier.setRotation(90);
-        timer = 2000;
+        timer = 200;
         addWall();
+        addObject(new Computer(), 500, 500);
     }
     
     public void act() {
-        //countdown();
+        countDown();
         showTimer();
         changeHp();
+        addPortal();
     }
-    
+    public void countDown() {
+        if (timer > 0) {
+            timer--;
+        }
+    }
     public int getTimer() {
         return timer;
     }
@@ -35,11 +41,7 @@ public class StageEight extends ZombieWorld
     public void showTimer() {
         showText("Timer: " + getTimer(), 800, 600);
     }
-    //public void countDown() {
-        //if (part.getAmountofParts() == 2) {
-            //timer--;
-        //}
-    //}
+    
     /**
      * Adding wall to StageEight
      */
@@ -76,6 +78,12 @@ public class StageEight extends ZombieWorld
         for (int i = 0; i < 4; i++) {
             Wall2 wall2 = new Wall2();
             addObject(wall2, 985, 690 - (i * 45));
+        }
+    }
+    
+    public void addPortal() {
+        if (timer <= 0) {
+            addObject(new Portal(), 500, 200);
         }
     }
 }   
