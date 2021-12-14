@@ -19,5 +19,19 @@ public class Credit extends World
         creditContent = new GreenfootImage("CreditsContent.png");
         creditContent.scale(800, 500);
         getBackground().drawImage(creditContent, 110, 100);
+        showText("Press shift to go back to menu", 195, 632);
+    }
+    
+    public void act() {
+        pressToBackToMenu();
+    }
+    
+    /**
+     * Press shift to go back to menu
+     */
+    public void pressToBackToMenu() {
+        if (Greenfoot.isKeyDown("shift")) {
+            Greenfoot.setWorld(new Menu());
+        }
     }
 }

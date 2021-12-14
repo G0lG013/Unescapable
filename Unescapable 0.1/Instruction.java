@@ -18,6 +18,7 @@ public class Instruction extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
         showInstructions();
+        showText("Press shift to go back to menu", 195, 632);
     }
     
     /**
@@ -30,5 +31,18 @@ public class Instruction extends World
         showText("Mouse to make the character face the same direction as the pointer", 500, 375);
         showText("Shift to make the character run / speed up", 500, 475);
         showText("Spacebar to make soldier shoot", 500, 575);
+    }
+    
+    public void act() {
+        pressToBackToMenu();
+    }
+    
+    /**
+     * Press shift to go back to menu
+     */
+    public void pressToBackToMenu() {
+        if (Greenfoot.isKeyDown("shift")) {
+            Greenfoot.setWorld(new Menu());
+        }
     }
 }
