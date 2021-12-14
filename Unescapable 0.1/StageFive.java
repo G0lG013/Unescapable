@@ -18,6 +18,7 @@ public class StageFive extends ZombieWorld
         soldier.setLocation(x, y);
         soldier.setRotation(0);
         addWall();
+         addObject(new SpitterZombie(20), 700, 350);
     }
     
     /**

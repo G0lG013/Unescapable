@@ -11,7 +11,7 @@ public class Instructions extends Button
     private GreenfootImage instruction;
     public Instructions()
     {
-        instruction = new GreenfootImage("Credits.png");
+        instruction = new GreenfootImage("Controls.png");
         //GreenfootImage instructionButton = new GreenfootImage(100,60);
         //Font adjustedFont = new Font(20);
         //instructionButton.setFont(adjustedFont);

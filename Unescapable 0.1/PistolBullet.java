@@ -24,7 +24,7 @@ public class PistolBullet extends Actor
      * A method that removes the bullet at the edge.
      */
     public void removeBulletAtEdge(){
-        if(this.isAtEdge()){
+        if(this.isAtEdge() || isTouching(Wall.class) || isTouching(Wall2.class)){
             getWorld().removeObject(this);
         }
     }

@@ -119,7 +119,7 @@ public class Soldier extends Actor
      * Note: Going back to main menu is not yet implemented.
      */
     public void die() {
-        if (isTouching(Zombie.class) && hitCdTimer >= hitCd && hpCount > 0) {
+         if ((isTouching(Zombie.class) || isTouching(SpitShot.class)) && hitCdTimer >= hitCd && hpCount > 0) {
             hpCount--;
             hitCdTimer = 0;
             Greenfoot.playSound("Pain.wav");
